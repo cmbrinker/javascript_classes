@@ -1,23 +1,14 @@
 class Pet {
-  constructor(animal, age, breed, sound) {
+  constructor(animal, age, breed) {
     this.animal = animal;
     this.age = age;
     this.breed = breed;
-    this.sound = sound;
   }
-  
-  speak() {
-    console.log(this.sound);
-  }
-  
-} 
+}
 
-const ernie = new Pet('dog', 1, 'pug', 'yip yip');
-const vera = new Pet('dog', 8, 'border collie', 'woof woof');
+var ernie = new Pet('dog', 1, 'pug');
+var vera = new Pet('dog', 8, 'border collie');
+var scofield = new Pet('dog',6, 'doberman');
+var edel = new Pet('dog', 7, 'german shorthaired pointer');
 
-
-
-
-
-
-
+console.log(ernie);
