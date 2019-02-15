@@ -8,11 +8,18 @@ class Pet {
   get activity() {
     var time = new Date();
     var hours = time.getHours();
-    if(hours > 8 && hours <= 20) {
+    if(hours >= 8 && hours <= 20) {
       return "playing";
     } else {
       return "sleeping";
     }
+  }
+  get owner() {
+    return this._owner;
+  }
+  set owner(owner) {
+    this._owner = owner;
+    console.log(`setter called: ${owner}`);
   }
   speak() {
     console.log(this.sound);
@@ -27,3 +34,5 @@ var edel = new Pet('dog', 7, 'german shorthaired pointer', 'bark bark');
 ernie.speak();
 vera.speak();
 console.log(ernie.activity);
+ernie.owner = 'Chris';
+console.log(ernie.owner);
