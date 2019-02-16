@@ -26,6 +26,20 @@ class Pet {
   }
 }
 
+class Owner {
+  constructor(name, address) {
+    this.name = name;
+    this.address = address;
+  }
+  set phone(phone) {
+    const phoneNormalized = phone.replace(/[^0-9]/g, '');
+    this._phone = phoneNormalized;
+  }
+  get phone () {
+    return this._phone;
+  }
+}
+
 var ernie = new Pet('dog', 1, 'pug', 'yip yip');
 var vera = new Pet('dog', 8, 'border collie', 'woof woof');
 var scofield = new Pet('dog',6, 'doberman', 'yap yap');
@@ -34,5 +48,6 @@ var edel = new Pet('dog', 7, 'german shorthaired pointer', 'bark bark');
 ernie.speak();
 vera.speak();
 console.log(ernie.activity);
-ernie.owner = 'Chris';
-console.log(ernie.owner);
+ernie.owner = new Owner('Chris', '455 Kelton St. Boston, MA');
+ernie.owner.phone = '(555) 555-5555';
+console.log(ernie.owner.phone);
